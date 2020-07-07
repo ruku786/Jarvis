@@ -1,3 +1,4 @@
+# Import basic libraries
 import pyttsx3
 import datetime
 import speech_recognition as sr
@@ -7,11 +8,13 @@ voices=engine.getProperty('voices')
 #print(voices[0].id)
 engine.setProperty('voices', voices[0].id)
 
-
+# Define Function for Audio
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+
+# Define Function for wishMe
 def wishMe():
     hour=int(datetime.datetime.now().hour)
     if hour>=0 and hour<12:
@@ -24,7 +27,8 @@ def wishMe():
         speak("Good Evening!")   
 
     speak("Hello Rukshar, I  am  Jarvis, What  Can  i  do  for  you")    
-     
+ 
+# Define Function for takeCommand
 def takeCommand():
 
     r=sr.Recognizer()
